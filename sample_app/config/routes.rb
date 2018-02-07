@@ -1,4 +1,5 @@
 SampleApp::Application.routes.draw do
+  get "contacts/new"
   devise_for :users, :controllers => {
     :registrations => "registrations"
   }
@@ -7,6 +8,7 @@ SampleApp::Application.routes.draw do
       get :following, :followers
     end
   end
+  resources :contacts, only: [:new, :create]
   resources :microposts,    only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
 
