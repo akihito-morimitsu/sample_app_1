@@ -16,7 +16,7 @@ end
      private
 
           def contact_params
-               params.require(:contact).permit(:name, :email, :content)
+               params.require(:contact).permit(:name, :email, :age, :content)
           end
 
 end
